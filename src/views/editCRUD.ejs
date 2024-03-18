@@ -41,12 +41,19 @@
           <input type="text" class="form-control" name="address" placeholder="1234 Main St"
             value="<%= userData.address %>">
         </div>
-        <input value="<%= userData.id %>" type="text" name="id" hidden />
-        <button type="submit" class="btn btn-primary">Update</button>
+        <div>
+          <button type="submit" class="btn btn-primary">Update</button>
+          <button id="btnCancel" type="submit" class="btn btn-outline-primary">Huỷ</button>
+        </div>
       </form>
 
     </div>
   </div>
+  <script>
+    document.getElementById('btnCancel').addEventListener('click', function(){
+      window.location.href='/get-crud'
+    });
+  </script>
 </body>
 
 </html>

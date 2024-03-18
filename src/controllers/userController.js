@@ -17,11 +17,12 @@ const handleLogin = async (req, res) => {
 
   const userData = await userService.handleUserLogin(email, password);
 
-  return res.status(200).json({
-    errCode: userData.errCode,
-    message: userData.errMessage,
-    user: userData.user ? userData.user : {},
-  });
+  // return res.status(200).json({
+  //   errCode: userData.errCode,
+  //   message: userData.errMessage,
+  //   user: userData.user ? userData.user : {},
+  // });
+  return res.render('ContentPage.ejs');
 };
 
 const handleGetAllUsers = async (req, res) => {
@@ -36,11 +37,15 @@ const handleGetAllUsers = async (req, res) => {
   }
 
   const users = await userService.getAllUsers(id);
-  return res.status(200).json({
-    errCode: 0,
-    errMessage: "OK",
-    users,
-  });
+  // return res.status(200).json({
+  //   errCode: 0,
+  //   errMessage: "OK",
+  //   users,
+
+  // });
+  return res.render("displayCRUD.ejs", {
+    dataTable: users
+  })
 };
 
 const handleCreateNewUser = async (req, res) => {

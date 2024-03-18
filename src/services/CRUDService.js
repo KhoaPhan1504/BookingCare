@@ -22,6 +22,7 @@ let createNewUser = (dataUser) => {
   });
 };
 
+
 let hashUserPassword = (password) => {
   return new Promise((resolve, reject) => {
     try {

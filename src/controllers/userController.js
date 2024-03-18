@@ -1,5 +1,9 @@
 import userService from "../services/userService";
 
+let getLogin = (req, res) => {
+  return res.render("login.ejs");
+};
+
 const handleLogin = async (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
@@ -76,6 +80,7 @@ const getAllCode = async (req, res) => {
 };
 
 module.exports = {
+  getLogin,
   handleLogin,
   handleGetAllUsers,
   handleCreateNewUser,
